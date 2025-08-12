@@ -28,6 +28,8 @@ try{
     mkdir "$localDirPath" -ErrorAction Stop
 }catch{
     Write-Host "App folder $localDirPath already exists" -ForegroundColor Red
+    Write-Host "Try to uninstall and reinstall the app"
+    return
 }
 
 Write-Host ""
