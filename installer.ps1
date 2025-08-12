@@ -82,7 +82,9 @@ try{
 	# [Environment]::SetEnvironmentVariable("onion-chat", "$localAppPath", "User")
 
 	# ${env:Path} += ";$localDirPath"
-	[Environment]::SetEnvironmentVariable("Path", ${env:Path} + ";$localDirPath", "User")
+	# [Environment]::SetEnvironmentVariable("Path", ${env:Path} + ";$localDirPath", "User")
+    $userVariablesPath = [Environment]::GetEnvironmentVariable("Path", "User")
+    [Environment]::SetEnvironmentVariable("Path", $userVariablesPath + ";$localDirPath", "User")
 }catch{
 	Write-Host "Error while setting environment variables" -ForegroundColor Red
 }
