@@ -7,7 +7,7 @@ $localAppPath = "$env:USERPROFILE\AppData\Local\Onion-chat"
 try{
     rmdir "$localAppPath" -Recurse -Force -ErrorAction Stop
 }catch{
-    Write-Error "Error while tried to remove the app folder at $localAppPath" -ForegroundColor Red
+    Write-Error "Error while tried to remove the app folder at $localAppPath"
     return
 }
 
@@ -26,7 +26,7 @@ try{
     }
     [Environment]::SetEnvironmentVariable("Path", $newPath, "User")
 }catch{
-    Write-Error "Error while tried to remove environment variable" -ForegroundColor Red
+    Write-Error "Error while tried to remove environment variable"
 }
 
-Write-Host "onion-chat successfully uninstalled" -ForegroundColor Green
+Write-Host "onion-chat successfully uninstalled"
