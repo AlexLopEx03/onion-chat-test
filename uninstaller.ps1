@@ -1,3 +1,5 @@
+Write-Host ""
+
 Write-Host "Running onion-chat Windows uninstaller"
 
 $localAppPath = "$env:USERPROFILE\AppData\Local\Onion-chat"
